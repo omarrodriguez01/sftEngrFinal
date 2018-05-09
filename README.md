@@ -1,1 +1,3 @@
 # sftEngrFinal
+mac running: PLAID_CLIENT_ID=5ae64b1925f307001011930e PLAID_SECRET=2ce1e8cd9b304c0ce82f608c14d5f4 PLAID_PUBLIC_KEY=85c386ac0bbb5e77b8ab0ff3835d5b PLAID_ENV=development ruby app.rb
+
