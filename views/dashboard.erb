@@ -1,0 +1,86 @@
+
+      
+  
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-1 sidebar">
+         
+          <ul class="nav nav-sidebar">
+            <li><a href="https://getbootstrap.com/docs/3.3/examples/dashboard/">Nav item</a></li>
+           
+            <li><a href="https://getbootstrap.com/docs/3.3/examples/dashboard/">One more nav</a></li>
+            <li><a href="https://getbootstrap.com/docs/3.3/examples/dashboard/">Another nav item</a></li>
+            <li><a href="https://getbootstrap.com/docs/3.3/examples/dashboard/">More navigation</a></li>
+          </ul>
+          <ul class="nav nav-sidebar">
+            <li><a href="https://getbootstrap.com/docs/3.3/examples/dashboard/">Nav item again</a></li>
+            <li><a href="https://getbootstrap.com/docs/3.3/examples/dashboard/">One more nav</a></li>
+            <li><a href="https://getbootstrap.com/docs/3.3/examples/dashboard/">Another nav item</a></li>
+          </ul>
+        </div>
+
+        <div class="col-sm-9 col-sm-offset-3 col-md-9 col-md-offset-2 main">
+          <h1 class="page-header">Welcome to Pigdet!</h1>
+
+          <p>Total Spent $<%=@total.round(2)%> out of $<%=@ncb%> </p>
+          <div class="progress mx-auto" style="width: 1000px">
+           
+  <div class="progress-bar progress-bar-striped" role="progressbar" style="width: <%=(@total/@ncb)*100 %>%" aria-valuenow="<%=@ncb%>" aria-valuemin="<%=@ncb%>" aria-valuemax="800"></div>
+</div>
+ 
+
+<p>This Week's savings $<%=(@tws).round(2)%> out of $<%=@weeklyG%></p>
+<div class="progress mx-auto" style="width: 1000px">
+  <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: <%=((@tws)/@weeklyG)*100 %>%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+</div> 
+<p> Overall Savings towards goal! $<%=@saved.round(2)%> out of $<%=@goal%></p>
+<div class="progress mx-auto" style="width: 1000px">
+  <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: <%=(@saved/@goal)*100 %>%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+<p>This Weeks's budget left $<%=(@ncb-@total).round(2)%> out $<%=@ncb%></p>
+<div class="progress mx-auto" style="width: 1000px">
+  <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: <%=((@ncb-@total)/@ncb)*100%>%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+
+       
+
+          <h2 class="sub-header">This Week's Transactions</h2>
+          <div class="table-responsive">
+            <table class="table table-striped">
+              <thead>
+                <tr>
+                  <th>Transactions amount</th>
+                  <th>Type</th>
+                  <th>Category</th>
+                  <th>Date</th>
+                  
+                </tr>
+              </thead>
+              <tbody>
+                
+                  
+                  <% @transactions.each do |trans, x| %>
+                  <tr>
+                 <td>$<%= trans.trans_amount %></td>
+                 <td><%= trans.trans_type %></td>
+                 <td><%= trans.trans_category %></td>
+                  <td><%= trans.trans_date %></td>
+                  </tr>
+
+          <%end%>
+               
+            </tbody>
+              
+            </table>
+            <%= @total%>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <br><br>
+
+    
+

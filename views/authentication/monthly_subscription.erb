@@ -1,0 +1,31 @@
+	<div style="margin-top":10px" class="form-group">
+	<div class="col-sm-12 controls">
+
+	<h1> Signing up for PIGDGET! </h1>
+	<p> Includes <strong> ALL PIGDGET FEATURES </strong> for only <strong> $5.00 </strong> per month! </p>
+
+	<form action="subscribe" method="POST">
+	Enter your Pigdget Email: <input type="text" name="email"><br/>
+	Enter your Pigdget Password: <input type="password" name="password"><br/>
+
+	</br>
+	<H4 class="prompt">Card Payment - Web</H4>
+	<TD class="sub_total">Monthly Subscription Amount: $5.00</br>
+
+	</TD>
+	<form action="/charge" method="post" class="payment">
+    <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+    data-key="<%= settings.publishable_key %>"
+    data-description="Pigdget Subscription"
+    data-amount="500"
+    data-locale="auto"></script>
+  	</form>	
+  	</br>
+	</br>
+	</div>
+	</div>
+	
+	</br></br></br></br></br></br></br></br></br></br></br></br>
+	</TD></TR></TABLE></FORM></DIV></TD></TR></TABLE></DIV></TD></TR><TR class="bottom"><TD>&nbsp;</TD></TR>
+	</TABLE></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV></DIV></TD></TR></TABLE>
+	</DIV></DIV></TD></P></TD></TR><TR><TD>Powered by ASAP CORE Business Technologies</DIV>
