@@ -39,6 +39,7 @@ post "/register" do
 	u = User.new
 	u.email = email.downcase
 	u.password =  password
+	u.stripe = false
 	u.save
 
 	session[:user_id] = u.id
