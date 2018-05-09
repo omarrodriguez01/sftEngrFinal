@@ -169,6 +169,7 @@ post '/charge' do
     :customer    => customer.id
     #:items => {:plan => "gold"}
   )
+  current_user.stripe =true
 
   erb :charge
 end
