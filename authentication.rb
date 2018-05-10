@@ -37,6 +37,9 @@ post "/register" do
 	password = params[:password]
 
 	u = User.new
+	if(User.first(email:params["email"]))
+		return "This email is already taken"
+	end
 	u.email = email.downcase
 	u.password =  password
 	u.stripe = false
